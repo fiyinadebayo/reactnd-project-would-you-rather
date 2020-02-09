@@ -1,8 +1,8 @@
 let users = {
   sarahedo: {
-    id: 'sarahedo',
-    name: 'Sarah Edo',
-    avatarURL: ,
+    id: 'fiyin_adebayo',
+    name: 'Fiyin Adebayo',
+    avatarURL: 'https://avatars2.githubusercontent.com/u/9349859?s=400',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
       "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -12,9 +12,9 @@ let users = {
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
   tylermcginnis: {
-    id: 'tylermcginnis',
+    id: 'tyler_mcginnis',
     name: 'Tyler McGinnis',
-    avatarURL: ,
+    avatarURL: 'https://tylermcginnis.com/would-you-rather/tyler.jpg',
     answers: {
       "vthrdm985a262al8qx3do": 'optionOne',
       "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -22,9 +22,9 @@ let users = {
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
   johndoe: {
-    id: 'johndoe',
-    name: 'John Doe',
-    avatarURL: ,
+    id: 'dan_abramov',
+    name: 'Dan Abramov',
+    avatarURL: 'https://tylermcginnis.com/would-you-rather/dan.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
       "vthrdm985a262al8qx3do": 'optionTwo',
