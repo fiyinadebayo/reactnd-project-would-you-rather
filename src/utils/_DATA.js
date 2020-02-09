@@ -1,5 +1,5 @@
 let users = {
-  sarahedo: {
+  fiyin_adebayo: {
     id: 'fiyin_adebayo',
     name: 'Fiyin Adebayo',
     avatarURL: 'https://avatars2.githubusercontent.com/u/9349859?s=400',
@@ -11,7 +11,7 @@ let users = {
     },
     questions: ['8xf0y6ziyjabvozdd253nd', 'am8ehyc8byjqgar0jgpub9']
   },
-  tylermcginnis: {
+  tyler_mcginnis: {
     id: 'tyler_mcginnis',
     name: 'Tyler McGinnis',
     avatarURL: 'https://tylermcginnis.com/would-you-rather/tyler.jpg',
@@ -21,7 +21,7 @@ let users = {
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  johndoe: {
+  dan_abramov: {
     id: 'dan_abramov',
     name: 'Dan Abramov',
     avatarURL: 'https://tylermcginnis.com/would-you-rather/dan.jpg',

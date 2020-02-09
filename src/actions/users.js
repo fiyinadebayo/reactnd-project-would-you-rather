@@ -11,7 +11,7 @@ function receiveUsers (users) {
 export function handleGetUsers () {
   return (dispatch) => {
     return getUsers()
-      .then(({ users }) => {
+      .then((users) => {
         dispatch(receiveUsers(users))
       })
   }
