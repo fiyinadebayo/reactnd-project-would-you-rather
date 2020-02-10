@@ -6,6 +6,7 @@ import { handleGetUsers } from './actions/users';
 
 // pages
 import Login from './pages/Login';
+import Home from './pages/Home';
 
 class App extends Component {
   componentDidMount () {
@@ -13,12 +14,20 @@ class App extends Component {
   }
 
   render() {
+    const { authUser } = this.props;
+
     return (
       <div className="App">
-        <Login />
+        { authUser ? <Home /> : <Login /> }
       </div>
     );
   }
 }
 
-export default connect()(App);
+const mapStateToProps = ({ authUser }) => {
+  return {
+    authUser
+  }
+}
+
+export default connect(mapStateToProps)(App);
