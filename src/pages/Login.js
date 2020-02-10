@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { setAuthUser } from '../actions/authUser';
 
 class Login extends Component {
   render() {
@@ -18,7 +19,7 @@ class Login extends Component {
 
           <ul>
             {this.props.usersId.map(id => (
-               <li key={id}>{id}</li>
+               <li key={id} onClick={() => this.props.dispatch(setAuthUser(id))}>{id}</li>
             ))}
           </ul>
         </div>
