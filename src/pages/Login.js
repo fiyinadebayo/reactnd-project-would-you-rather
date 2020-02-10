@@ -6,9 +6,15 @@ class Login extends Component {
     return (
       <div>
         <h3>Would you rather?</h3>
+        
+        {
+          this.props.loading && (
+            <div>Initializing...</div>
+          )
+        }
 
         <div>
-          Login
+          Select a User to Login
 
           <ul>
             {this.props.usersId.map(id => (
@@ -21,8 +27,9 @@ class Login extends Component {
   }
 }
 
-const mapStateToProps = ({ users }) => {
+const mapStateToProps = ({ users, loading }) => {
   return {
+    loading,
     usersId: Object.keys(users)
   }
 }
