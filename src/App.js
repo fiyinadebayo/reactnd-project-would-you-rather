@@ -7,6 +7,7 @@ import { handleGetUsers } from './actions/users';
 // pages
 import Login from './pages/Login';
 import Home from './pages/Home';
+import LeaderBoard from './pages/LeaderBoard';
 
 class App extends Component {
   componentDidMount () {
@@ -18,7 +19,12 @@ class App extends Component {
 
     return (
       <div className="App">
-        { authUser ? <Home /> : <Login /> }
+        { authUser ? (
+          <>
+            <LeaderBoard />
+            <Home />
+          </>
+          ) : <Login /> }
       </div>
     );
   }
