@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleGetQuestions } from '../actions/questions';
+import QuestionCard from '../components.js/QuestionCard';
 
 class Home extends Component {
   componentDidMount() {
@@ -12,20 +13,28 @@ class Home extends Component {
         Welcome home.
 
         <div>
-          <h2>Unanswered Questions</h2>
-          {this.props.unansweredQuestionsId.length}
+          <h2>Unanswered Questions ({this.props.unansweredQuestionsId.length})</h2>
+
+          {
+            this.props.unansweredQuestionsId.map(id => (
+              <div key={id}>
+                <QuestionCard id={id} />
+              </div>
+            ))
+          }
         </div>
 
         <div>
-          <h2>Answered Questions</h2>
-          {this.props.answeredQuestionsId.length}
-        </div>
+          <h2>Answered Questions ({this.props.answeredQuestionsId.length})</h2>
 
-        {
-          this.props.unansweredQuestionsId.map(id => (
-            <p key={id}>{id}</p>
-          ))
-        }
+          {
+            this.props.answeredQuestionsId.map(id => (
+              <div key={id}>
+                <QuestionCard id={id} />
+              </div>
+            ))
+          }
+        </div>
       </div>
     )
   }

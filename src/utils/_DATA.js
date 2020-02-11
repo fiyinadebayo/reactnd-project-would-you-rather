@@ -1,7 +1,7 @@
 let users = {
-  sarahedo: {
-    id: 'sarahedo',
-    name: 'Sarah Edo',
+  fiyinadebayo: {
+    id: 'fiyinadebayo',
+    name: 'Fiyin Adebayo',
     avatarURL: 'https://avatars2.githubusercontent.com/u/9349859?s=400',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
@@ -37,10 +37,10 @@ let users = {
 let questions = {
   "8xf0y6ziyjabvozdd253nd": {
     id: '8xf0y6ziyjabvozdd253nd',
-    author: 'sarahedo',
+    author: 'fiyinadebayo',
     timestamp: 1467166872634,
     optionOne: {
-      votes: ['sarahedo'],
+      votes: ['fiyinadebayo'],
       text: 'have horrible short term memory',
     },
     optionTwo: {
@@ -57,20 +57,20 @@ let questions = {
       text: 'become a superhero',
     },
     optionTwo: {
-      votes: ['johndoe', 'sarahedo'],
+      votes: ['johndoe', 'fiyinadebayo'],
       text: 'become a supervillain'
     }
   },
   "am8ehyc8byjqgar0jgpub9": {
     id: 'am8ehyc8byjqgar0jgpub9',
-    author: 'sarahedo',
+    author: 'fiyinadebayo',
     timestamp: 1488579767190,
     optionOne: {
       votes: [],
       text: 'be telekinetic',
     },
     optionTwo: {
-      votes: ['sarahedo'],
+      votes: ['fiyinadebayo'],
       text: 'be telepathic'
     }
   },
@@ -83,7 +83,7 @@ let questions = {
       text: 'be a front-end developer',
     },
     optionTwo: {
-      votes: ['sarahedo'],
+      votes: ['fiyinadebayo'],
       text: 'be a back-end developer'
     }
   },
