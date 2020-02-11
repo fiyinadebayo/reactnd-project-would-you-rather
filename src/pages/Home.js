@@ -13,16 +13,16 @@ class Home extends Component {
 
         <div>
           <h2>Unanswered Questions</h2>
-          {this.props.unansweredQuestions.length}
+          {this.props.unansweredQuestionsId.length}
         </div>
 
         <div>
           <h2>Answered Questions</h2>
-          {this.props.answeredQuestions.length}
+          {this.props.answeredQuestionsId.length}
         </div>
 
         {
-          this.props.questionsId.map(id => (
+          this.props.unansweredQuestionsId.map(id => (
             <p key={id}>{id}</p>
           ))
         }
@@ -33,9 +33,11 @@ class Home extends Component {
 
 const mapStateToProps = ({ authUser, questions }) => {
   return {
-    questionsId: Object.keys(questions),
-    unansweredQuestions: Object.keys(questions).filter(key => !questions[key].optionOne.votes.includes(authUser) || !questions[key].optionTwo.votes.includes(authUser) ),
-    answeredQuestions: Object.keys(questions).filter(key => questions[key].optionOne.votes.includes(authUser) || questions[key].optionTwo.votes.includes(authUser) ),
+    unansweredQuestionsId: Object.keys(questions)
+      .filter(key => !questions[key].optionOne.votes.includes(authUser) && !questions[key].optionTwo.votes.includes(authUser)),
+
+    answeredQuestionsId: Object.keys(questions)
+      .filter(key => questions[key].optionOne.votes.includes(authUser) || questions[key].optionTwo.votes.includes(authUser)),
   }
 }
 

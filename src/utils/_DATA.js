@@ -1,7 +1,7 @@
 let users = {
-  fiyinadebayo: {
-    id: 'fiyinadebayo',
-    name: 'Fiyin Adebayo',
+  sarahedo: {
+    id: 'sarahedo',
+    name: 'Sarah Edo',
     avatarURL: 'https://avatars2.githubusercontent.com/u/9349859?s=400',
     answers: {
       "8xf0y6ziyjabvozdd253nd": 'optionOne',
@@ -21,9 +21,9 @@ let users = {
     },
     questions: ['loxhs1bqm25b708cmbf3g', 'vthrdm985a262al8qx3do'],
   },
-  danabramov: {
-    id: 'danabramov',
-    name: 'Dan Abramov',
+  johndoe: {
+    id: 'johndoe',
+    name: 'John Doe',
     avatarURL: 'https://tylermcginnis.com/would-you-rather/dan.jpg',
     answers: {
       "xj352vofupe1dqz9emx13r": 'optionOne',
