@@ -8,6 +8,7 @@ import { handleGetUsers } from './actions/users';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import LeaderBoard from './pages/LeaderBoard';
+import NewQuestion from './pages/NewQuestion';
 
 class App extends Component {
   componentDidMount () {
@@ -21,6 +22,7 @@ class App extends Component {
       <div className="App">
         { authUser ? (
           <>
+            <NewQuestion />
             <LeaderBoard />
             <Home />
           </>

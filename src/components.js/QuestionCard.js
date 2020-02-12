@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 class QuestionCard extends Component {
   render() {
     const { question } = this.props;
-    console.log('question: ', this.props)
 
     if (question === null) {
       return (
