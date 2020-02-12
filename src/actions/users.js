@@ -1,10 +1,18 @@
 import { getUsers } from "../utils/api";
-import { RECEIVE_USERS } from "./constants";
+import { RECEIVE_USERS, UPDATE_USER } from "./constants";
 
 function receiveUsers (users) {
   return {
     type: RECEIVE_USERS,
     users,
+  }
+}
+
+export function updateUser (user, questionId) {
+  return {
+    type: UPDATE_USER,
+    user,
+    questionId,
   }
 }
 

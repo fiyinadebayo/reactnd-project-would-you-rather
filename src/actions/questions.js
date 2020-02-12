@@ -1,5 +1,6 @@
 import { RECEIVE_QUESTIONS, ADD_QUESTION } from "./constants";
 import { getQuestions, saveQuestion } from "../utils/api";
+import { updateUser } from "./users";
 
 function receiveQuestions (questions) {
   return {
@@ -30,6 +31,9 @@ export function handleSaveQuestion (payload) {
       ...payload,
       author: authUser,
     })
-    .then((question) => dispatch(addQuestion(question)))
+    .then((question) => {
+      dispatch(addQuestion(question))
+      dispatch(updateUser(authUser, question.id))
+    })
   }
 }
