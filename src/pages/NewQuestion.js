@@ -15,10 +15,18 @@ const NewQuestion = (props) => {
     setFormValues(state => ({...state, [name]: value}))
   };
 
+  const resetForm = () => {
+    setFormValues({
+      optionOneText: '',
+      optionTwoText: '',
+    })
+  };
+
   const onSaveQuestion =  (event) => {
     event.preventDefault()
     props.dispatch(handleSaveQuestion(formValues))
-  }
+    resetForm()
+  };
 
   return (
     <div>
