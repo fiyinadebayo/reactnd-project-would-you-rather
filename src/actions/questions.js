@@ -1,6 +1,6 @@
 import { RECEIVE_QUESTIONS, ADD_QUESTION } from "./constants";
-import { getQuestions, saveQuestion } from "../utils/api";
-import { updateUser } from "./users";
+import { getQuestions, saveQuestion, saveQuestionVote } from "../utils/api";
+import { updateUserQuestions, updateUserAnswers } from "./users";
 
 function receiveQuestions (questions) {
   return {
@@ -33,7 +33,20 @@ export function handleSaveQuestion (payload) {
     })
     .then((question) => {
       dispatch(addQuestion(question))
-      dispatch(updateUser(authUser, question.id))
+      dispatch(updateUserQuestions(authUser, question.id))
     })
+  }
+}
+
+export function handleQuestionVote (qid, vote) {
+  return (dispatch, getState) => {
+    const { authUser } = getState();
+
+    return saveQuestionVote({
+      authedUser: authUser,
+      qid: qid,
+      answer: vote,
+    })
+    .then(() => dispatch(updateUserAnswers(authUser, qid, vote)))
   }
 }
