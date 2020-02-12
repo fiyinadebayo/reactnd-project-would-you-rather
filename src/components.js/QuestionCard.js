@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import helpers from '../utils/helpers';
+import QuestionDetails from '../pages/QuestionDetails';
 
 class QuestionCard extends Component {
   render() {
@@ -26,30 +28,16 @@ class QuestionCard extends Component {
           <p>{question.optionTwoText}</p>
         </div>
 
-        <button>View Poll</button>
+        <button onClick={() => <QuestionDetails id={question.id} />}>View Poll</button>
       </div>
     )
-  }
-}
-
-const formatQuestion = (question, users) => {
-  const { id, author, optionOne, optionTwo, timestamp } = question;
-  const { name, avatarURL } = users[author];
-
-  return {
-    id,
-    name,
-    timestamp,
-    avatar: avatarURL,
-    optionOneText: optionOne.text,
-    optionTwoText: optionTwo.text,
   }
 }
 
 const mapStateToProps = ({ questions, users }, { id }) => {
   return {
     id,
-    question: formatQuestion(questions[id], users)
+    question: helpers.formatQuestion(questions[id], users),
   }
 }
 

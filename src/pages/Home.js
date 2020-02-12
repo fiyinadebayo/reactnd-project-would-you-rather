@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleGetQuestions } from '../actions/questions';
 import QuestionCard from '../components.js/QuestionCard';
+import helpers from '../utils/helpers';
 
 class Home extends Component {
   componentDidMount() {
@@ -45,10 +46,10 @@ const mapStateToProps = ({ authUser, questions }) => {
 
   return {
     unansweredQuestionsId: sortedQuestions
-      .filter(key => !questions[key].optionOne.votes.includes(authUser) && !questions[key].optionTwo.votes.includes(authUser)),
+      .filter(key => helpers.questionNotAnswered(questions[key], authUser)),
 
     answeredQuestionsId: sortedQuestions
-      .filter(key => questions[key].optionOne.votes.includes(authUser) || questions[key].optionTwo.votes.includes(authUser)),
+      .filter(key => helpers.questionAnswered(questions[key], authUser)),
   }
 }
 
