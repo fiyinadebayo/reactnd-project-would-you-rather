@@ -25,7 +25,7 @@ const QuestionDetails = (props) => {
   return (
     <div>
       <NavBar />
-      
+
       <h4>{question.name} { answered ? 'asked:' : 'asks...' }</h4>
 
       <img src={question.avatar} alt={`${question.avatar} avatar`} width={100} />

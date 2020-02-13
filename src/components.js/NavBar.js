@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { logoutUser } from '../actions/authUser';
 
-const NavBar = ({ userData }) => {
+const NavBar = ({ userData, dispatch }) => {
   return (
     <nav>
       <div>
@@ -17,6 +18,11 @@ const NavBar = ({ userData }) => {
         <div>
           <div>
             Hi, {userData.name}
+            <img src={userData.avatarURL} alt={`${userData.avatarURL} avatar`} width={40} />
+          </div>
+
+          <div>
+            <button onClick={() => dispatch(logoutUser())}>Log Out</button>
           </div>
         </div>
       </div>

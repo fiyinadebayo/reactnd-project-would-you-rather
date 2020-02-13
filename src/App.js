@@ -16,7 +16,7 @@ import Home from './pages/Home';
 import LeaderBoard from './pages/LeaderBoard';
 import NewQuestion from './pages/NewQuestion';
 import QuestionDetails from './pages/QuestionDetails';
-import NotFound from './pages/NoFound';
+import NotFound from './pages/NotFound';
 
 class App extends Component {
   componentDidMount () {
