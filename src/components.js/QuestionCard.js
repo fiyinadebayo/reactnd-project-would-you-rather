@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import helpers from '../utils/helpers';
-import QuestionDetails from '../pages/QuestionDetails';
+import { Link } from 'react-router-dom';
 
 class QuestionCard extends Component {
   render() {
@@ -28,7 +28,9 @@ class QuestionCard extends Component {
           <p>{question.optionTwoText}</p>
         </div>
 
-        <button onClick={() => <QuestionDetails id={question.id} />}>View Poll</button>
+        <Link to={`questions/${question.id}`}>
+          View Poll
+        </Link>
       </div>
     )
   }

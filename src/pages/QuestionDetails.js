@@ -1,23 +1,38 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import helpers from '../utils/helpers';
+import { withRouter } from 'react-router-dom';
 
-const QuestionDetails = (props) => {
-  const { authUser, question } = props;
-
+const QuestionDetails = ({ authUser, question }) => {
   return (
     <div>
       Would you rather?
+
+      <h4>{question.author} asks...</h4>
+
+      <img src={question.avatar} alt={`${question.avatar} avatar`} width={100} />
+
+      <div>
+        <p>{question.optionOneText}</p>
+        <p>{question.optionTwoText}</p>
+      </div>
+
+      <div>
+        <button>Vote</button>
+      </div>
     </div>
   )
 }
 
-const mapStateToProps = ({ authUser, questions, users }, { id }) => {
+const mapStateToProps = ({ authUser, questions, users }, { match }) => {
+  const { question_id } = match.params;
+  const question = questions[question_id]
+
   return {
-    id: "8xf0y6ziyjabvozdd253nd",
     authUser,
-    question: helpers.formatQuestion(questions[id], users),
+    question: helpers.formatQuestion(question, users),
+    answered: helpers.questionAnswered(question, authUser),
   }
 }
 
-export default connect()(QuestionDetails);
+export default withRouter(connect(mapStateToProps)(QuestionDetails));

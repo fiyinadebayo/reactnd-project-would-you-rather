@@ -15,6 +15,7 @@ import Login from './pages/Login';
 import Home from './pages/Home';
 import LeaderBoard from './pages/LeaderBoard';
 import NewQuestion from './pages/NewQuestion';
+import QuestionDetails from './pages/QuestionDetails';
 
 class App extends Component {
   componentDidMount () {
@@ -52,6 +53,10 @@ class App extends Component {
 
             <PrivateRoute path="/home">
               <Home />
+            </PrivateRoute>
+
+            <PrivateRoute path="/questions/:question_id">
+              <QuestionDetails />
             </PrivateRoute>
           </Switch>
         </div>
