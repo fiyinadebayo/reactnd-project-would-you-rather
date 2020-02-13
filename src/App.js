@@ -55,8 +55,16 @@ class App extends Component {
               <Home />
             </PrivateRoute>
 
+            <PrivateRoute path="/add">
+              <NewQuestion />
+            </PrivateRoute>
+
             <PrivateRoute path="/questions/:question_id">
               <QuestionDetails />
+            </PrivateRoute>
+
+            <PrivateRoute path="/leaderboard">
+              <LeaderBoard />
             </PrivateRoute>
           </Switch>
         </div>
