@@ -35,12 +35,12 @@ const QuestionDetails = (props) => {
           <p>Poll Results</p>
           <p>
             ({ question.optionOneVotes.includes(authUser) && <span>You answered this.</span> })
-            {question.optionOneText}, {question.optionOneVotes.length} of {totalUsers}, {helpers.calcPercentage(question.optionOneVotes.length, totalUsers)}
+            {question.optionOneText}, {question.optionOneVotes.length} of {totalUsers}, {helpers.calcPercentage(question.optionOneVotes.length, totalUsers)}%
           </p>
           
           <p>
             ({ question.optionTwoVotes.includes(authUser) && <span>You answered this.</span> })
-            {question.optionTwoText}, {question.optionTwoVotes.length} of {totalUsers}, {helpers.calcPercentage(question.optionTwoVotes.length, totalUsers)}
+            {question.optionTwoText}, {question.optionTwoVotes.length} of {totalUsers}, {helpers.calcPercentage(question.optionTwoVotes.length, totalUsers)}%
           </p>
         </div>
       ) : (
