@@ -16,6 +16,7 @@ import Home from './pages/Home';
 import LeaderBoard from './pages/LeaderBoard';
 import NewQuestion from './pages/NewQuestion';
 import QuestionDetails from './pages/QuestionDetails';
+import NotFound from './pages/NoFound';
 
 class App extends Component {
   componentDidMount () {
@@ -66,6 +67,10 @@ class App extends Component {
             <PrivateRoute path="/leaderboard">
               <LeaderBoard />
             </PrivateRoute>
+
+            <Route path="*">
+              <NotFound />
+            </Route>
           </Switch>
         </div>
       </Router>
