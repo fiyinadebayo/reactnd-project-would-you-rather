@@ -9,7 +9,9 @@ const helpers = {
       timestamp,
       avatar: avatarURL,
       optionOneText: optionOne.text,
+      optionOneVotes: optionOne.votes,
       optionTwoText: optionTwo.text,
+      optionTwoVotes: optionTwo.votes,
     }
   },
 
@@ -19,7 +21,14 @@ const helpers = {
 
   questionNotAnswered: (question, user) => {
     return !question.optionOne.votes.includes(user) && !question.optionTwo.votes.includes(user)
-  }
+  },
+
+  calcPercentage: (count, total) => {
+    const countInt = parseInt(count);
+    const totalInt = parseInt(total);
+
+    return Math.round((countInt / totalInt) * 100);
+  },
 }
 
 export default helpers;
