@@ -1,4 +1,4 @@
-import { RECEIVE_QUESTIONS, ADD_QUESTION, UPDATE_QUESTION_VOTE } from "./constants";
+import { RECEIVE_QUESTIONS, ADD_QUESTION, UPDATE_QUESTION_VOTE } from "../utils/constants";
 import { getQuestions, saveQuestion, saveQuestionVote } from "../utils/api";
 import { updateUserQuestions, updateUserAnswers } from "./users";
 

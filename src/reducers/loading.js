@@ -1,4 +1,4 @@
-import { RECEIVE_USERS } from "../actions/constants"
+import { RECEIVE_USERS } from "../utils/constants"
 
 export default function loading (state = true, action) {
   switch (action.type) {

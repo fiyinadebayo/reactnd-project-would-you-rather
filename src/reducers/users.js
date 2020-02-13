@@ -2,7 +2,7 @@ import {
   RECEIVE_USERS,
   UPDATE_USER_QUESTIONS,
   UPDATE_USER_ANSWERS
-} from "../actions/constants";
+} from "../utils/constants";
 
 export default function users (state = {}, action) {
   switch (action.type) {

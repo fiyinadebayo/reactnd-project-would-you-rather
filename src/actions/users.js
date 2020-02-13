@@ -3,7 +3,7 @@ import {
   RECEIVE_USERS,
   UPDATE_USER_QUESTIONS,
   UPDATE_USER_ANSWERS
-} from "./constants";
+} from "../utils/constants";
 
 function receiveUsers (users) {
   return {

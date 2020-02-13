@@ -1,4 +1,4 @@
-import { SET_AUTH_USER, LOGOUT_AUTH_USER } from "./constants";
+import { SET_AUTH_USER, LOGOUT_AUTH_USER } from "../utils/constants";
 
 export function setAuthUser (id) {
   return {
