@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { handleSaveQuestion } from '../actions/questions';
+import NavBar from '../components.js/NavBar';
 
 const NewQuestion = (props) => {
   const [formValues, setFormValues] = useState({
@@ -30,6 +31,8 @@ const NewQuestion = (props) => {
 
   return (
     <div>
+      <NavBar />
+      
       <h3>New Polling Question</h3>
 
       <form>

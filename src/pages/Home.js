@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { handleGetQuestions } from '../actions/questions';
 import QuestionCard from '../components.js/QuestionCard';
 import helpers from '../utils/helpers';
+import NavBar from '../components.js/NavBar';
 
 class Home extends Component {
   componentDidMount() {
@@ -11,6 +12,8 @@ class Home extends Component {
   render() {
     return (
       <div>
+        <NavBar />
+
         Welcome home.
 
         <div>

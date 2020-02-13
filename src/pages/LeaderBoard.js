@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserCard from '../components.js/UserCard';
+import NavBar from '../components.js/NavBar';
 
 class LeaderBoard extends Component {
   render() {
     return (
       <div>
+        <NavBar />
+        
         <h3>Leader Board</h3>
 
         <div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import helpers from '../utils/helpers';
 import { withRouter } from 'react-router-dom';
 import { handleSaveQuestionVote } from '../actions/questions';
+import NavBar from '../components.js/NavBar';
 
 const QuestionDetails = (props) => {
   const {
@@ -23,6 +24,8 @@ const QuestionDetails = (props) => {
 
   return (
     <div>
+      <NavBar />
+      
       <h4>{question.name} { answered ? 'asked:' : 'asks...' }</h4>
 
       <img src={question.avatar} alt={`${question.avatar} avatar`} width={100} />
