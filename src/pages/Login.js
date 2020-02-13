@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setAuthUser } from '../actions/authUser';
+import { withRouter } from 'react-router-dom';
 
 class Login extends Component {
   render() {
@@ -19,7 +20,12 @@ class Login extends Component {
 
           <ul>
             {this.props.usersId.map(id => (
-               <li key={id} onClick={() => this.props.dispatch(setAuthUser(id))}>{id}</li>
+              <li key={id} onClick={() => {
+                this.props.dispatch(setAuthUser(id))
+                this.props.history.push('/home')
+               }}>
+                 {id}
+              </li>
             ))}
           </ul>
         </div>
@@ -35,4 +41,4 @@ const mapStateToProps = ({ users, loading }) => {
   }
 }
 
-export default connect(mapStateToProps)(Login);
+export default withRouter(connect(mapStateToProps)(Login));

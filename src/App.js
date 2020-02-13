@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
@@ -18,16 +24,38 @@ class App extends Component {
   render() {
     const { authUser } = this.props;
 
+    const PrivateRoute = ({ children, ...rest }) => {
+      return (
+        <Route {...rest} render={({ location }) =>
+            authUser ? (
+              children
+            ) : (
+              <Redirect
+                to={{
+                  pathname: "/",
+                  state: { from: location }
+                }}
+              />
+            )
+          }
+        />
+      );
+    }
+
     return (
-      <div className="App">
-        { authUser ? (
-          <>
-            <NewQuestion />
-            <LeaderBoard />
-            <Home />
-          </>
-          ) : <Login /> }
-      </div>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route exact path="/">
+              <Login />
+            </Route>
+
+            <PrivateRoute path="/home">
+              <Home />
+            </PrivateRoute>
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
