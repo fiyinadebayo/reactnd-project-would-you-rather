@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import helpers from '../utils/helpers';
 import { withRouter } from 'react-router-dom';
+import { handleSaveQuestionVote } from '../actions/questions';
 
-const QuestionDetails = ({ authUser, question }) => {
+const QuestionDetails = ({ question, dispatch }) => {
   const [vote, setVote] = useState('');
 
   const handleSubmitVote = (e) => {
-    // e.preventDefault()
+    e.preventDefault()
+    dispatch(handleSaveQuestionVote(question.id, vote))
+    setVote('')
   }
 
   return (
