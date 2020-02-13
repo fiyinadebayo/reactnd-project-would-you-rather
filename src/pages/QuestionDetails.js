@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import helpers from '../utils/helpers';
 import { withRouter } from 'react-router-dom';
 
 const QuestionDetails = ({ authUser, question }) => {
+  const [vote, setVote] = useState('');
+
+  const handleSubmitVote = (e) => {
+    // e.preventDefault()
+  }
+
   return (
     <div>
       Would you rather?
@@ -13,12 +19,12 @@ const QuestionDetails = ({ authUser, question }) => {
       <img src={question.avatar} alt={`${question.avatar} avatar`} width={100} />
 
       <div>
-        <p>{question.optionOneText}</p>
-        <p>{question.optionTwoText}</p>
+        <p onClick={() => setVote('optionOne')}>{question.optionOneText}</p>
+        <p onClick={() => setVote('optionTwo')}>{question.optionTwoText}</p>
       </div>
 
       <div>
-        <button>Vote</button>
+        <button onClick={handleSubmitVote}>Vote</button>
       </div>
     </div>
   )
