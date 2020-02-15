@@ -19,8 +19,6 @@ class UserCard extends Component {
           <p>Questions answered: {Object.keys(user.answers).length}</p>
           <p>SCORE: {total(user)}</p>
         </div>
-
-        <button>View Poll</button>
       </div>
     )
   }

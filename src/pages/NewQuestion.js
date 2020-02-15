@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { handleSaveQuestion } from '../actions/questions';
 import NavBar from '../components.js/NavBar';
+import { withRouter } from 'react-router-dom';
 
 const NewQuestion = (props) => {
   const [formValues, setFormValues] = useState({
@@ -16,17 +17,10 @@ const NewQuestion = (props) => {
     setFormValues(state => ({...state, [name]: value}))
   };
 
-  const resetForm = () => {
-    setFormValues({
-      optionOneText: '',
-      optionTwoText: '',
-    })
-  };
-
   const onSaveQuestion =  (event) => {
+    const { dispatch, history } = props;
     event.preventDefault()
-    props.dispatch(handleSaveQuestion(formValues))
-    resetForm()
+    dispatch(handleSaveQuestion(formValues, () => history.push('/home')))
   };
 
   return (
@@ -81,4 +75,4 @@ const NewQuestion = (props) => {
   )
 }
 
-export default connect()(NewQuestion);
+export default withRouter(connect()(NewQuestion));

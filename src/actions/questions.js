@@ -26,7 +26,7 @@ export function receiveQuestions (questions) {
   }
 }
 
-export function handleSaveQuestion (payload) {
+export function handleSaveQuestion (payload, cb) {
   return (dispatch, getState) => {
     dispatch(showLoading())
     const { authUser } = getState();
@@ -39,6 +39,7 @@ export function handleSaveQuestion (payload) {
       dispatch(hideLoading())
       dispatch(addQuestion(question))
       dispatch(updateUserQuestions(authUser, question.id))
+      cb()
     })
   }
 }
