@@ -1,32 +1,40 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { logoutUser } from '../actions/authUser';
+import Button from './Button';
 
 const NavBar = ({ userData, dispatch }) => {
   return (
-    <nav>
-      <div>
-        <p>Would You Rather?</p>
+    <nav className="navbar">
+      <div className="nav-logo">
+        <p>Would</p>
+        <p>You</p>
+        <p>Rather?</p>
+      </div>
 
+      <div className="links">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/leaderboard">Leader Board</Link></li>
-          <li><Link to="/add">New Question</Link></li>
+          <li><NavLink exact to="/">Home</NavLink></li>
+          <li><NavLink to="/leaderboard">Leader Board</NavLink></li>
+          <li><NavLink to="/add">New Question</NavLink></li>
         </ul>
+      </div>
+
+      <div className="auth-user">
+        <div>Hi, {userData.name}</div>
+        <div><img src={userData.avatarURL} alt={`${userData.avatarURL} avatar`} width={40} /></div>
 
         <div>
-          <div>
-            Hi, {userData.name}
-            <img src={userData.avatarURL} alt={`${userData.avatarURL} avatar`} width={40} />
-          </div>
-
-          <div>
-            <button onClick={() => dispatch(logoutUser())}>Log Out</button>
-          </div>
+          <Button
+            id="logout-btn"
+            size="sm"
+            text="Log Out"
+            onClick={() => dispatch(logoutUser())}
+          />
         </div>
       </div>
-    </nav>
+  </nav>
   )
 }
 

@@ -7,9 +7,9 @@ import NavBar from '../components/NavBar';
 class Home extends Component {
   render() {
     return (
-      <div>
-        <NavBar />
-
+      <>
+      <NavBar />
+      <div className="wrapper">
         Welcome home.
 
         <div>
@@ -36,6 +36,7 @@ class Home extends Component {
           }
         </div>
       </div>
+      </>
     )
   }
 }
