@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import { handleSaveQuestionVote } from '../actions/questions';
 import NavBar from '../components/NavBar';
 import Button from '../components/Button';
+import PercentBar from '../components/PercentBar';
 
 const QuestionDetails = (props) => {
   const {
@@ -51,14 +52,20 @@ const QuestionDetails = (props) => {
 
               <div className={`answer ${question.optionOneVotes.includes(authUser) ? 'selected' : ''}`}>
                 <p>{question.optionOneText}</p>
+
+                <PercentBar
+                  progress={helpers.calcPercentage(question.optionOneVotes.length, totalUsers)}
+                />
                 <p>{question.optionOneVotes.length} out of {totalUsers} votes</p>
-                <p>{helpers.calcPercentage(question.optionOneVotes.length, totalUsers)}%</p>
               </div>
 
               <div className={`answer ${question.optionTwoVotes.includes(authUser) ? 'selected' : ''}`}>
                 <p>{question.optionTwoText}</p>
+
+                <PercentBar
+                  progress={helpers.calcPercentage(question.optionTwoVotes.length, totalUsers)}
+                />
                 <p>{question.optionTwoVotes.length} out of {totalUsers} votes</p>
-                <p>{helpers.calcPercentage(question.optionTwoVotes.length, totalUsers)}%</p>
               </div>
             </>
           ) : (
