@@ -8,7 +8,8 @@ import {
 // import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { handleGetUsers } from './actions/users';
+import { handleInitialData } from './actions/common';
+import { LoadingBar } from 'react-redux-loading';
 
 // pages
 import Login from './pages/Login';
@@ -20,7 +21,11 @@ import NotFound from './pages/NotFound';
 
 class App extends Component {
   componentDidMount () {
-    this.props.dispatch(handleGetUsers())
+    const { authUser, dispatch } = this.props;
+
+    if (authUser === null) {
+      dispatch(handleInitialData())
+    }
   }
 
   render() {
@@ -46,6 +51,9 @@ class App extends Component {
 
     return (
       <Router>
+        <>
+        <LoadingBar />
+
         <div className="App">
           <Switch>
             <Route exact path="/">
@@ -73,6 +81,7 @@ class App extends Component {
             </Route>
           </Switch>
         </div>
+        </>
       </Router>
     );
   }

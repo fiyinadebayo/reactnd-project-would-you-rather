@@ -1,11 +1,10 @@
-import { getUsers } from "../utils/api";
 import {
   RECEIVE_USERS,
   UPDATE_USER_QUESTIONS,
   UPDATE_USER_ANSWERS
 } from "../utils/constants";
 
-function receiveUsers (users) {
+export function receiveUsers (users) {
   return {
     type: RECEIVE_USERS,
     users,
@@ -26,14 +25,5 @@ export function updateUserAnswers (user, questionId, vote) {
     user,
     questionId,
     vote,
-  }
-}
-
-export function handleGetUsers () {
-  return (dispatch) => {
-    return getUsers()
-      .then((users) => {
-        dispatch(receiveUsers(users))
-      })
   }
 }

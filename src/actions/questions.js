@@ -1,13 +1,6 @@
 import { RECEIVE_QUESTIONS, ADD_QUESTION, UPDATE_QUESTION_VOTE } from "../utils/constants";
-import { getQuestions, saveQuestion, saveQuestionVote } from "../utils/api";
+import { saveQuestion, saveQuestionVote } from "../utils/api";
 import { updateUserQuestions, updateUserAnswers } from "./users";
-
-function receiveQuestions (questions) {
-  return {
-    type: RECEIVE_QUESTIONS,
-    questions,
-  }
-}
 
 function addQuestion (question) {
   return {
@@ -25,10 +18,10 @@ function updateQuestionVote (authUser, qid, vote) {
   }
 }
 
-export function handleGetQuestions () {
-  return (dispatch) => {
-    return getQuestions()
-      .then((questions) => dispatch(receiveQuestions(questions)))
+export function receiveQuestions (questions) {
+  return {
+    type: RECEIVE_QUESTIONS,
+    questions,
   }
 }
 
