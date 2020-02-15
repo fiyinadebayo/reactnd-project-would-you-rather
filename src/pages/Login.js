@@ -16,12 +16,21 @@ const Login = (props) => {
   }
 
   const handleLogin = (event) => {
-    const { dispatch, history } = props
+    const { dispatch, history, location } = props
 
     event.preventDefault()
 
-    dispatch(setAuthUser(selectedUser.value))
-    history.push('/')
+    dispatch(setAuthUser(selectedUser.value));
+    handleRedirect(history, location)
+  }
+
+  const handleRedirect = (history, location) => {
+    if (location.state) {
+      const { pathname } = location.state.from;
+      history.push(pathname)
+    } else {
+      history.push('/')
+    }
   }
 
   return (
