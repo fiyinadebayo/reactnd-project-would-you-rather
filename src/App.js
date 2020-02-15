@@ -50,7 +50,7 @@ class App extends Component {
     return (
       <Router>
         <>
-        <LoadingBar />
+        <LoadingBar className="loading-bar" />
 
         <div className="container">
           <Switch>

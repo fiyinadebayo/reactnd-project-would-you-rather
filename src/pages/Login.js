@@ -48,7 +48,7 @@ const Login = (props) => {
         <div>Loading users...</div>
       ): (
         <div>
-          Select a User to Login
+          Please login to continue
 
           <form>
             <Select
@@ -57,10 +57,12 @@ const Login = (props) => {
               value={selectedUser}
               options={userOptions}
               onChange={setSelectedUser}
+              placeholder="Select User..."
             />
 
             <Button
               text="Log in"
+              type="primary"
               onClick={handleLogin}
               isDisabled={btnDisabled()}
             />

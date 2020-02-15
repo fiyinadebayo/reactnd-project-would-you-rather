@@ -14,10 +14,15 @@ code {
     monospace;
 }
 
+.loading-bar {
+  background-color: #0f4c81;
+  height: 4px;
+}
+
 .wrapper {
   border: 1px solid #efefef;
   margin: 20px auto;
-  padding: 10px;
+  padding: 20px;
   width: 50%;
 }
 
@@ -90,11 +95,13 @@ code {
   cursor: pointer;
   font-size: .875rem;
   padding: 10px 30px;
+  transition: all 0.25s ease-in-out;
 }
 
 .btn:hover {
   border-color: rgba(0,0,0,.5);
   text-decoration: none;
+  transition: all 0.25s ease-in-out;
 }
 
 .btn:focus {
@@ -102,9 +109,22 @@ code {
   font-weight: 500;
 }
 
-.btn:disabled {
+.btn.primary {
+  background: #0f4c81;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: rgba(15,76,129,.9);
+  text-decoration: none;
+  transition: all 0.25s ease-in-out;
+}
+
+.btn:disabled,
+.btn:disabled:hover {
   background-color: #efefef;
   border: none;
+  color: #868686;
 }
 
 /* Login form */
