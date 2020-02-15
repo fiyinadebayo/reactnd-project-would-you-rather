@@ -286,3 +286,42 @@ code {
   text-decoration: underline;
   transition: all 0.25s ease-out;
 }
+
+/* Leader board */
+.leader-board h3 {
+  text-align: center;
+}
+
+/* User card */
+.user-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  display: flex;
+  margin: 16px auto;
+  padding: 16px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.user-card .user .name {
+  margin-top: 0;
+}
+
+.user-card .user .image img {
+  border-radius: 10px;
+}
+
+.user-card .summary {
+  margin-left: 20px;
+}
+
+.user-card .summary .score {
+  color: #868686;
+  font-size: .75rem;
+}
+
+.user-card .summary .score span {
+  color: #0f4c81;
+  font-size: 3rem;
+}

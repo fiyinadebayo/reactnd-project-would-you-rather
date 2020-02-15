@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import helpers from '../utils/helpers';
 import { Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ const QuestionCard = ({ question }) => {
     <div className="question-card">
       <div className="user">
         <div className="image">
-          <img src={question.avatar} alt={`${question.avatar} avatar`} width={100} />
+          <img src={question.avatar} alt={`${question.name} avatar`} width={100} />
         </div>
 
         <div>

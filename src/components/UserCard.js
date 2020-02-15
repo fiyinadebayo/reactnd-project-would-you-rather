@@ -1,31 +1,33 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
-class UserCard extends Component {
-  render() {
-    const { user } = this.props;
+const UserCard = ({ user}) => {
+  const total = (user) => {
+    return user.questions.length + Object.keys(user.answers).length
+  }
 
-    return (
-      <div style={{border: '1px solid blue', margin: '20px auto'}}>
-        <div>
-          <img src={user.avatarURL} alt={`${user.avatarURL} avatar`} width={100} />
-        </div>
-        <div>
-          <p>{ user.name }</p>
+  return (
+    <div className="user-card">
+      <div className="user">
+      <div>
+          <h2 className="name">
+            { user.name }
+          </h2>
         </div>
 
-        <div>
-          <p>Questions asked: {user.questions.length}</p>
-          <p>Questions answered: {Object.keys(user.answers).length}</p>
-          <p>SCORE: {total(user)}</p>
+        <div className="image">
+          <img src={user.avatarURL} alt={`${user.name} avatar`} width={100} />
         </div>
       </div>
-    )
-  }
-}
 
-const total = (user) => {
-  return user.questions.length + Object.keys(user.answers).length
+      <div className="summary">
+        <p>Asked Questions: {user.questions.length}</p>
+        <p>Answered Questions: {Object.keys(user.answers).length}</p>
+
+        <p className="score">SCORE: <br /> <span>{total(user)}</span></p>
+      </div>
+    </div>
+  )
 }
 
 const mapStateToProps = ({ users }, { id }) => {

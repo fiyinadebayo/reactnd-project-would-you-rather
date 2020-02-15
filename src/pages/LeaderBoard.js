@@ -6,17 +6,17 @@ import NavBar from '../components/NavBar';
 class LeaderBoard extends Component {
   render() {
     return (
-      <div>
-        <NavBar />
-        
+      <>
+      <NavBar />
+
+      <div className="wrapper leader-board">
         <h3>Leader Board</h3>
 
-        <div>
-          {this.props.usersId.map(id => (
-            <UserCard key={id} id={id} />
-          ))}
-        </div>
+        {this.props.usersId.map(id => (
+          <UserCard key={id} id={id} />
+        ))}
       </div>
+      </>
     )
   }
 }
