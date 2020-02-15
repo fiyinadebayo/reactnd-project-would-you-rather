@@ -10,7 +10,7 @@ class LeaderBoard extends Component {
       <NavBar />
 
       <div className="wrapper leader-board">
-        <h3>Leader Board</h3>
+        <h2>Leader Board</h2>
 
         {this.props.usersId.map(id => (
           <UserCard key={id} id={id} />

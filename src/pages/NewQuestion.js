@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { handleSaveQuestion } from '../actions/questions';
 import NavBar from '../components/NavBar';
 import { withRouter } from 'react-router-dom';
+import Button from '../components/Button';
 
 const NewQuestion = (props) => {
   const [formValues, setFormValues] = useState({
@@ -23,13 +24,18 @@ const NewQuestion = (props) => {
     dispatch(handleSaveQuestion(formValues, () => history.push('/')))
   };
 
-  return (
-    <div>
-      <NavBar />
-      
-      <h3>New Polling Question</h3>
+  const isFormDisabled = () => {
+    const { loadingBar } = props;
+    return !formValues.optionOneText || !formValues.optionTwoText || loadingBar.default === 1;
+  }
 
-      <form>
+  return (
+    <>
+    <NavBar />
+    <div className="wrapper new-question">
+      <h2>New Polling Question</h2>
+
+      <form className="question-form">
         <p>Complete the question:</p>
 
         <h4>Would you rather...</h4>
@@ -42,11 +48,12 @@ const NewQuestion = (props) => {
             value={formValues.optionOneText}
             onChange={onTextChange}
             placeholder="Option One..."
+            className="text-input"
             required
           />
         </div>
 
-        <div>
+        <div className="or">
           <p>OR</p>
         </div>
 
@@ -58,21 +65,30 @@ const NewQuestion = (props) => {
             value={formValues.optionTwoText}
             onChange={onTextChange}
             placeholder="Option Two..."
+            className="text-input"
             required
           />
         </div>
 
-        <div>
-          <button
-            id="postPoll"
-            type="submit"
-            onClick={onSaveQuestion}>
-              Post Poll
-          </button>
+        <div className="cta">
+          <Button
+            text="Save"
+            id="save-poll"
+            type="primary"
+            onClick={onSaveQuestion}
+            isDisabled={isFormDisabled()}
+          />
         </div>
       </form>
     </div>
+    </>
   )
 }
 
-export default withRouter(connect()(NewQuestion));
+const mapStateToProps = ({ loadingBar }) => {
+  return {
+    loadingBar,
+  }
+}
+
+export default withRouter(connect(mapStateToProps)(NewQuestion));
