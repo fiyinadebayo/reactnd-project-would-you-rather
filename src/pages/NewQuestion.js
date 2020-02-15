@@ -20,7 +20,7 @@ const NewQuestion = (props) => {
   const onSaveQuestion =  (event) => {
     const { dispatch, history } = props;
     event.preventDefault()
-    dispatch(handleSaveQuestion(formValues, () => history.push('/home')))
+    dispatch(handleSaveQuestion(formValues, () => history.push('/')))
   };
 
   return (

@@ -10,7 +10,7 @@ const NavBar = ({ userData, dispatch }) => {
         <p>Would You Rather?</p>
 
         <ul>
-          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/">Home</Link></li>
           <li><Link to="/leaderboard">Leader Board</Link></li>
           <li><Link to="/add">New Question</Link></li>
         </ul>

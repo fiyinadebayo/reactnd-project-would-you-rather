@@ -22,7 +22,7 @@ class Login extends Component {
             {this.props.usersId.map(id => (
               <li key={id} onClick={() => {
                 this.props.dispatch(setAuthUser(id))
-                this.props.history.push('/home')
+                this.props.history.push('/')
                }}>
                  {id}
               </li>

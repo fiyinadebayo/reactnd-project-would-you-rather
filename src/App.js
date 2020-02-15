@@ -39,7 +39,7 @@ class App extends Component {
             ) : (
               <Redirect
                 to={{
-                  pathname: "/",
+                  pathname: "/login",
                   state: { from: location }
                 }}
               />
@@ -56,11 +56,11 @@ class App extends Component {
 
         <div className="App">
           <Switch>
-            <Route exact path="/">
+            <Route path="/login">
               <Login />
             </Route>
 
-            <PrivateRoute path="/home">
+            <PrivateRoute exact path="/">
               <Home />
             </PrivateRoute>
 
