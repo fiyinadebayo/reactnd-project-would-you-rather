@@ -374,3 +374,46 @@ code {
   margin: 20px auto;
   text-align: center;
 }
+
+/* Question details */
+.question-details .body {
+  display: flex;
+}
+
+.question-details .body .user img {
+  border-radius: 10px;
+}
+
+.question-details .body .questions {
+  margin: 0 20px;
+  width: 100%;
+}
+
+.question-details .body .questions h3 {
+  margin-top: 0;;
+}
+
+.question-details .body .questions .options .option {
+  border: 1px solid #c8c8c8;
+  border-radius: 6px;
+  color: #868686;
+  cursor: pointer;
+  margin: 20px auto;
+  padding: 10px;
+  width: 100%;
+  -webkit-transition: all 100ms;
+  transition: all 100ms;
+}
+
+.question-details .body .questions .options .option:hover {
+  background-color: #f7f7f7;
+}
+
+.question-details .body .questions .options .option.active {
+  border: 1px solid #0f4c81;
+  color: #0f4c81
+}
+
+.question-details .body .questions .cta {
+  text-align: center;
+}
