@@ -5,8 +5,6 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-// import logo from './logo.svg';
-import './App.css';
 import { connect } from 'react-redux';
 import { handleInitialData } from './actions/common';
 import LoadingBar from 'react-redux-loading-bar';
@@ -54,7 +52,7 @@ class App extends Component {
         <>
         <LoadingBar />
 
-        <div className="App">
+        <div className="container">
           <Switch>
             <Route path="/login">
               <Login />

@@ -1,5 +1,5 @@
 import React from 'react';
-import NavBar from '../components.js/NavBar';
+import NavBar from '../components/NavBar';
 
 const NotFound = () => {
   return (

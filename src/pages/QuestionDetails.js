@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import helpers from '../utils/helpers';
 import { withRouter } from 'react-router-dom';
 import { handleSaveQuestionVote } from '../actions/questions';
-import NavBar from '../components.js/NavBar';
+import NavBar from '../components/NavBar';
 
 const QuestionDetails = (props) => {
   const {

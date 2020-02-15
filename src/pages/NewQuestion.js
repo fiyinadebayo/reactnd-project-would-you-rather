@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { handleSaveQuestion } from '../actions/questions';
-import NavBar from '../components.js/NavBar';
+import NavBar from '../components/NavBar';
 import { withRouter } from 'react-router-dom';
 
 const NewQuestion = (props) => {

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import QuestionCard from '../components.js/QuestionCard';
+import QuestionCard from '../components/QuestionCard';
 import helpers from '../utils/helpers';
-import NavBar from '../components.js/NavBar';
+import NavBar from '../components/NavBar';
 
 class Home extends Component {
   render() {
