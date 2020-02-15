@@ -110,6 +110,10 @@ code {
   width: 50%;
 }
 
+.wrapper h2 {
+  text-align: center;
+}
+
 @media screen and (max-width: 767px) {
   .wrapper {
     width: 90%;

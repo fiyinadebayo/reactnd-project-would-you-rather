@@ -33,6 +33,21 @@ const QuestionDetails = (props) => {
     return !vote || loadingBar.default === 1
   }
 
+  if (question === null) {
+    return (
+      <>
+      <NavBar />
+      <div className="wrapper">
+        <h2>Not Found</h2>
+
+        <div className="wrapper-status">
+          Poll does not exist
+        </div>
+      </div>
+      </>
+    )
+  }
+
   return (
     <>
     <NavBar />
@@ -109,8 +124,8 @@ const mapStateToProps = ({ authUser, questions, users, loadingBar }, { match }) 
   return {
     authUser,
     loadingBar,
-    question: helpers.formatQuestion(question, users),
-    answered: helpers.questionAnswered(question, authUser),
+    question: question ? helpers.formatQuestion(question, users) : null,
+    answered: question ? helpers.questionAnswered(question, authUser) : false,
     totalUsers: Object.keys(users).length,
   }
 }
