@@ -417,3 +417,61 @@ code {
 .question-details .body .questions .cta {
   text-align: center;
 }
+
+.question-details .body .questions .answer {
+  border: 1px solid #c8c8c8;
+  border-radius: 6px;
+  color: #868686;
+  margin: 20px auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.question-details .body .questions .answer p {
+  margin: 5px auto;
+}
+
+.question-details .body .questions .answer p:first-child {
+  color: #333;
+  font-size: 1.125rem;
+}
+
+.question-details .body .questions .answer p:nth-child(2) {
+  font-size: .875rem;
+}
+
+.question-details .body .questions .answer.selected {
+  background-color: rgba(15,76,129,.1);
+  border: 1px solid #0f4c81;
+  border-radius: 6px;
+  color: #0f4c81;
+  margin: 20px auto;
+  padding: 10px;
+  position: relative;
+  width: 100%;
+}
+
+.question-details .body .questions .answer.selected:before {
+  background-color: #fff;
+  border-radius: 6px;
+  color: #565656;
+  content: 'your vote';
+  font-size: .75rem;
+  right: 0;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+}
+
+.question-details .body .questions .answer.selected p {
+  margin: 5px auto;
+}
+
+.question-details .body .questions .answer.selected p:first-child {
+  color: #0f4c81;
+  font-size: 1.125rem;
+}
+
+.question-details .body .questions .answer.selected p:nth-child(2) {
+  font-size: .875rem;
+}

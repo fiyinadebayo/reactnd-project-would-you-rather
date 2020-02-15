@@ -49,14 +49,16 @@ const QuestionDetails = (props) => {
             <>
               <h3>Poll Results</h3>
 
-              <div className={question.optionOneVotes.includes(authUser) ? 'answer' : ''}>
-                ({ question.optionOneVotes.includes(authUser) && <span>You answered this.</span> })
-                {question.optionOneText}, {question.optionOneVotes.length} of {totalUsers}, {helpers.calcPercentage(question.optionOneVotes.length, totalUsers)}%
+              <div className={`answer ${question.optionOneVotes.includes(authUser) ? 'selected' : ''}`}>
+                <p>{question.optionOneText}</p>
+                <p>{question.optionOneVotes.length} out of {totalUsers} votes</p>
+                <p>{helpers.calcPercentage(question.optionOneVotes.length, totalUsers)}%</p>
               </div>
 
-              <div className={question.optionTwoVotes.includes(authUser) ? 'answer' : ''}>
-                ({ question.optionTwoVotes.includes(authUser) && <span>You answered this.</span> })
-                {question.optionTwoText}, {question.optionTwoVotes.length} of {totalUsers}, {helpers.calcPercentage(question.optionTwoVotes.length, totalUsers)}%
+              <div className={`answer ${question.optionTwoVotes.includes(authUser) ? 'selected' : ''}`}>
+                <p>{question.optionTwoText}</p>
+                <p>{question.optionTwoVotes.length} out of {totalUsers} votes</p>
+                <p>{helpers.calcPercentage(question.optionTwoVotes.length, totalUsers)}%</p>
               </div>
             </>
           ) : (
