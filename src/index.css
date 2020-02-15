@@ -93,6 +93,13 @@ code {
   width: 50%;
 }
 
+.wrapper-status {
+  color: #868686;
+  font-size: .875rem;
+  margin: 20px auto;
+  text-align: center;
+}
+
 .wrapper.login {
   text-align: center;
 }

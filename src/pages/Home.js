@@ -32,13 +32,29 @@ const Home = ({ unansweredQuestionsId, answeredQuestionsId }) => {
       </div>
 
       <div className="home-content">
-        { activeTab === 0 && unansweredQuestionsId.map(id => (
-            <QuestionCard key={id} id={id} />
-          )) }
+        { activeTab === 0 && (
+          unansweredQuestionsId.length > 0 ? (
+            unansweredQuestionsId.map(id => (
+              <QuestionCard key={id} id={id} />
+            ))
+          ) : (
+            <div className="wrapper-status">
+              You're all caught up! No unanswered questions.
+            </div>
+          )
+        ) }
 
-        { activeTab === 1 && answeredQuestionsId.map(id => (
-            <QuestionCard key={id} id={id} />
-          )) }
+        { activeTab === 1 && (
+          answeredQuestionsId.length > 0 ? (
+            answeredQuestionsId.map(id => (
+              <QuestionCard key={id} id={id} />
+            ))
+          ) : (
+            <div className="wrapper-status">
+              No answered questions. Get into the game by voting!
+            </div>
+          )
+        ) }
       </div>
     </div>
     </>
