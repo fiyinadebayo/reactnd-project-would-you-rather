@@ -249,3 +249,40 @@ code {
   background-color: #fff;
   color: #0f4c81;
 }
+
+/* Question card */
+.question-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  display: flex;
+  margin: 16px auto;
+  padding: 16px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.question-card .user .image img {
+  border-radius: 10px;
+}
+
+.question-card .summary {
+  margin-left: 20px;
+}
+
+.question-card .summary h4 {
+  margin-top: 0;
+}
+
+.question-card .summary a.link {
+  color: #f26b5b;
+  font-size: .875rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.25s ease-in;
+}
+
+.question-card .summary a.link:hover {
+  text-decoration: underline;
+  transition: all 0.25s ease-out;
+}
