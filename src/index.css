@@ -204,3 +204,48 @@ code {
 .user-select {
   margin: 20px auto;
 }
+
+/* Home page */
+.home .home-nav {
+  display: flex;
+  flex-direction: row;
+}
+
+.home .home-nav .tab {
+  background-color: #efefef;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: .3px;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+  transition: all 0.1s ease-in-out;
+}
+
+.home .home-nav .tab:hover {
+  background-color: rgba(15,76,129,.15);
+}
+
+.home .home-nav .tab:first-child {
+  margin-right: 5px;
+}
+
+.home .home-nav .tab.active {
+  background-color: #0f4c81;
+  color: #fff;
+  transition: all 0.1s ease-in-out;
+}
+
+.home .home-nav .tab .pill {
+  background-color: #868686;
+  border-radius: 20px;
+  color: #fff;
+  font-size: .8rem;
+  margin-left: 5px;
+  padding: 3px 7px;
+}
+
+.home .home-nav .tab.active .pill {
+  background-color: #fff;
+  color: #0f4c81;
+}

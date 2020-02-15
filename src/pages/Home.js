@@ -1,44 +1,48 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import QuestionCard from '../components/QuestionCard';
 import helpers from '../utils/helpers';
 import NavBar from '../components/NavBar';
 
-class Home extends Component {
-  render() {
-    return (
-      <>
-      <NavBar />
-      <div className="wrapper">
-        Welcome home.
+const Home = ({ unansweredQuestionsId, answeredQuestionsId }) => {
+  const [activeTab, setActiveTab] = useState(0)
 
-        <div>
-          <h2>Unanswered Questions ({this.props.unansweredQuestionsId.length})</h2>
+  const onTabClick = (index) => {
+    setActiveTab(index)
+  }
 
-          {
-            this.props.unansweredQuestionsId.map(id => (
-              <div key={id}>
-                <QuestionCard id={id} />
-              </div>
-            ))
-          }
+  const isTabActive = (index) => {
+    return activeTab === index ? 'tab active' : 'tab'
+  }
+
+  return (
+    <>
+    <NavBar />
+    <div className="wrapper home">
+      <div className="home-nav">
+        <div className={isTabActive(0)} onClick={() => onTabClick(0)}>
+          Unanswered Questions
+          <span className="pill">{unansweredQuestionsId.length}</span>
         </div>
 
-        <div>
-          <h2>Answered Questions ({this.props.answeredQuestionsId.length})</h2>
-
-          {
-            this.props.answeredQuestionsId.map(id => (
-              <div key={id}>
-                <QuestionCard id={id} />
-              </div>
-            ))
-          }
+        <div className={isTabActive(1)} onClick={() => onTabClick(1)}>
+          Answered Questions
+          <span className="pill">{answeredQuestionsId.length}</span>
         </div>
       </div>
-      </>
-    )
-  }
+
+      <div className="home-content">
+        { activeTab === 0 && unansweredQuestionsId.map(id => (
+            <QuestionCard key={id} id={id} />
+          )) }
+
+        { activeTab === 1 && answeredQuestionsId.map(id => (
+            <QuestionCard key={id} id={id} />
+          )) }
+      </div>
+    </div>
+    </>
+  )
 }
 
 const mapStateToProps = ({ authUser, questions }) => {
