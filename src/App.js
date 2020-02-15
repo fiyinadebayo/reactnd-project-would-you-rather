@@ -9,7 +9,7 @@ import {
 import './App.css';
 import { connect } from 'react-redux';
 import { handleInitialData } from './actions/common';
-import { LoadingBar } from 'react-redux-loading';
+import LoadingBar from 'react-redux-loading-bar';
 
 // pages
 import Login from './pages/Login';
