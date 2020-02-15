@@ -18,7 +18,7 @@ code {
   border: 1px solid #efefef;
   margin: 20px auto;
   padding: 10px;
-  width: 60%;
+  width: 50%;
 }
 
 .wrapper.login {
@@ -44,6 +44,7 @@ code {
 }
 
 .intro-images {
+  align-items: center;
   display: flex;
   justify-content: center;
   margin: 20px auto;
@@ -79,4 +80,34 @@ code {
   to {
     transform: rotate(0deg);
   }
+}
+
+/* Button */
+.btn {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.29);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: .875rem;
+  padding: 10px 30px;
+}
+
+.btn:hover {
+  border-color: rgba(0,0,0,.5);
+  text-decoration: none;
+}
+
+.btn:focus {
+  outline: 0;
+  font-weight: 500;
+}
+
+.btn:disabled {
+  background-color: #efefef;
+  border: none;
+}
+
+/* Login form */
+.user-select {
+  margin: 20px auto;
 }
