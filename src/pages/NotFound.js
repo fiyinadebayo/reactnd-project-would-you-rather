@@ -3,11 +3,16 @@ import NavBar from '../components/NavBar';
 
 const NotFound = () => {
   return (
-    <div>
-      <NavBar />
-      
-      Page Not Found
+    <>
+    <NavBar />
+    <div className="wrapper">
+      <h2>404 - Not Found</h2>
+
+      <div className="wrapper-status">
+        The page you seek cannot be found :(
+      </div>
     </div>
+    </>
   )
 }
 

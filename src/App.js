@@ -74,9 +74,9 @@ class App extends Component {
               <LeaderBoard />
             </PrivateRoute>
 
-            <Route path="*">
+            <PrivateRoute path="*">
               <NotFound />
-            </Route>
+            </PrivateRoute>
           </Switch>
         </div>
         </>
