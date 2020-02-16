@@ -33,10 +33,10 @@ All questions are listed by categories (unanswered and answered) on the homepage
 ##### C. Vote
 Select VIEW POLL on any questino card on the homepage to select an option to vote. If you have voted for that question, you will be redirected to a page showing you the polling results. Voting can be done only once.
 
-##### B. Add Questions
+##### D. Add Questions
 You can add new questions by clicking NEW QUESTION on the navbar or visiting http://localhost:3000/add
 
-##### B. Leader Board
+##### E. Leader Board
 Visit http://localhost:3000/leaderboard to see how you rank on the board as compared to other users based on how many questions you have asked and answered.
 
 ## Data
