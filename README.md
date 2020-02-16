@@ -21,6 +21,24 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Open [http://localhost:3000](http://localhost:3000/) to view it in the browser.
 
+## Functionalities
+##### A. Login
+Login to use the app by selecting a User from the dropdown menu when you visit http://localhost:3000/login.
+
+##### B. List Questions
+All questions are listed by categories (unanswered and answered) on the homepage when you visit http://localhost:3000/. You can click the tab to toggle between questions in each category:
+* Unanswered Questions
+* Answered Questions
+
+##### C. Vote
+Select VIEW POLL on any questino card on the homepage to select an option to vote. If you have voted for that question, you will be redirected to a page showing you the polling results. Voting can be done only once.
+
+##### B. Add Questions
+You can add new questions by clicking NEW QUESTION on the navbar or visiting http://localhost:3000/add
+
+##### B. Leader Board
+Visit http://localhost:3000/leaderboard to see how you rank on the board as compared to other users based on how many questions you have asked and answered.
+
 ## Data
 The `_DATA.js` file represents a fake database and methods that let you access the data. The only thing you need to edit in the ` _DATA.js` file is the value of `avatarURL`. Each user should have an avatar, so you’ll need to add the path to each user’s avatar.
 
