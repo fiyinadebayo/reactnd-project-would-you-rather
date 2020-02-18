@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/reactnd-project-would-you-rather/static/css/main.41d57260.chunk.css",
+    "main.js": "/reactnd-project-would-you-rather/static/js/main.590f59bf.chunk.js",
+    "main.js.map": "/reactnd-project-would-you-rather/static/js/main.590f59bf.chunk.js.map",
+    "runtime-main.js": "/reactnd-project-would-you-rather/static/js/runtime-main.f76f4f93.js",
+    "runtime-main.js.map": "/reactnd-project-would-you-rather/static/js/runtime-main.f76f4f93.js.map",
+    "static/js/2.ee3d0bab.chunk.js": "/reactnd-project-would-you-rather/static/js/2.ee3d0bab.chunk.js",
+    "static/js/2.ee3d0bab.chunk.js.map": "/reactnd-project-would-you-rather/static/js/2.ee3d0bab.chunk.js.map",
+    "index.html": "/reactnd-project-would-you-rather/index.html",
+    "precache-manifest.4d01b28634dfeaec1bd4dec19bfeecda.js": "/reactnd-project-would-you-rather/precache-manifest.4d01b28634dfeaec1bd4dec19bfeecda.js",
+    "service-worker.js": "/reactnd-project-would-you-rather/service-worker.js",
+    "static/css/main.41d57260.chunk.css.map": "/reactnd-project-would-you-rather/static/css/main.41d57260.chunk.css.map",
+    "static/js/2.ee3d0bab.chunk.js.LICENSE.txt": "/reactnd-project-would-you-rather/static/js/2.ee3d0bab.chunk.js.LICENSE.txt",
+    "static/media/react-logo.svg": "/reactnd-project-would-you-rather/static/media/react-logo.5d5d9eef.svg",
+    "static/media/redux-logo.svg": "/reactnd-project-would-you-rather/static/media/redux-logo.5ae1af16.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f76f4f93.js",
+    "static/js/2.ee3d0bab.chunk.js",
+    "static/css/main.41d57260.chunk.css",
+    "static/js/main.590f59bf.chunk.js"
+  ]
+}
